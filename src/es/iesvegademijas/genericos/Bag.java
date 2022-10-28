@@ -6,7 +6,9 @@ package es.iesvegademijas.genericos;
 import java.util.*;
 
 /**
- * @author usuario
+ * @author Antonio Martin
+ * 
+ * 28/10/2022
  *
  */
 public class Bag<E> {

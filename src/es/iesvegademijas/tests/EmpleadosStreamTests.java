@@ -181,8 +181,8 @@ class EmpleadosStreamTests {
 			
 			//
 			var lista =  listEmp.stream()
-					.filter(e -> !e.getApellido2().equals(null) && !e.getDepartamento().getCodigo().equals(null))
-					.map(e -> e.getCodigo() + " , " + e.getNif().codePointCount(0, 7) + " , " + e.getNif().charAt(8))
+					.filter(e -> e.getApellido2() != null)
+					.map(e -> e.getCodigo() + " , " + e.getNif().substring(0, 7) + " , " + e.getNif().charAt(8))
 					.collect(toList());
 			
 			lista.forEach(System.out::println);
@@ -333,7 +333,7 @@ class EmpleadosStreamTests {
 			
 			//
 			var lista = listEmp.stream()
-					.filter(e -> !e.getApellido2().equals(null) && e.getDepartamento().getCodigo() != null)
+					.filter(e -> e.getApellido2() != null)
 					.sorted()
 					.skip(3)
 					.limit(5)

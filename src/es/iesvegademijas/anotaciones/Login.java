@@ -41,6 +41,12 @@ public class Login {
 	}
 	
 	// Metodos de la clase
+	public void aniadirUsuario(Credencial credencial) {
+		
+		this.listaUsuarios.add(credencial);
+		
+	}
+	
 	public void login() {
 		
 		Scanner s = new Scanner(System.in);
@@ -83,8 +89,16 @@ public class Login {
 		
 		for(CredencialAnotado anotadoCredencial: anotadoCredenciales) {
 			
+			Credencial credencial = new Credencial();
+			
+			credencial.setUsuario(anotadoCredencial.usuario());
+			credencial.setContrasenia(anotadoCredencial.contrasenia());
+			
+			login.aniadirUsuario(credencial);
 			
 		}
+		
+		return login;
 		
 		
 	}
